@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="#0F1539">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="back"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="110dp"
+            android:id="@+id/question_num"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="/5"
+            android:id="@+id/all_question"
+            android:textColor="#D1CCCC"
+            android:textSize="27sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="90dp"
+            android:src="@drawable/coin" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:text="200"
+            android:id="@+id/coin"
+            android:textColor="@color/white"
+            android:textSize="27sp"
+
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/image_stroke"
+        android:padding="3dp"
+        android:id="@+id/image_head"
+        android:scaleType="centerCrop"
+        android:src="@drawable/whale" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/container1"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/bottom_style"
+            android:background="@drawable/image_1"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/bottom_style"
+            android:background="@drawable/image_1"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/bottom_style"
+            android:background="@drawable/image_1"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/bottom_style"
+            android:background="@drawable/image_1"
+
+
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/bottom_style"
+            android:background="@drawable/image_1"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/bottom_style"
+            android:background="@drawable/image_1"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/bottom_style"
+            android:background="@drawable/image_1"
+
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="60dp"
+        android:layout_marginTop="25dp"
+        android:layout_height="80dp"
+        android:background="@drawable/lamp_back"
+        android:clickable="true"
+        android:onClick="help"
+        android:focusable="true"
+         android:gravity="center"
+        >
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/lamp"/>
+</LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/container2"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn1"
+            android:background="@drawable/image_2"
+            style="@style/bottom_style.2"
+            android:text="a" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn2"
+            style="@style/bottom_style.2"
+            android:background="@drawable/image_2"
+            android:text="b"
+            android:layout_toRightOf="@+id/btn1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn3"
+            style="@style/bottom_style.2"
+            android:text="c"
+            android:background="@drawable/image_2"
+            android:layout_toRightOf="@id/btn2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn4"
+            android:background="@drawable/image_2"
+            style="@style/bottom_style.2"
+            android:text="d"
+            android:layout_toRightOf="@+id/btn3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn5"
+            android:background="@drawable/image_2"
+            style="@style/bottom_style.2"
+            android:text="e"
+            android:layout_toRightOf="@id/btn4" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn6"
+            android:background="@drawable/image_2"
+            style="@style/bottom_style.2"
+            android:text="f"
+            android:layout_toRightOf="@+id/btn5" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn7"
+            android:background="@drawable/image_2"
+            android:text="g"
+            style="@style/bottom_style.2"
+            android:layout_below="@+id/btn6" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn8"
+            android:background="@drawable/image_2"
+            style="@style/bottom_style.2"
+            android:text="h"
+            android:layout_below="@id/btn2"
+            android:layout_toRightOf="@+id/btn7" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn9"
+            style="@style/bottom_style.2"
+            android:background="@drawable/image_2"
+            android:layout_below="@id/btn3"
+            android:text="i"
+            android:layout_toRightOf="@id/btn8"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn10"
+            style="@style/bottom_style.2"
+            android:background="@drawable/image_2"
+            android:layout_below="@id/btn4"
+            android:text="j"
+            android:layout_toRightOf="@id/btn9" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn11"
+            android:background="@drawable/image_2"
+            style="@style/bottom_style.2"
+            android:layout_below="@id/btn5"
+            android:text="k"
+            android:layout_toRightOf="@id/btn10"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn12"
+            android:background="@drawable/image_2"
+            style="@style/bottom_style.2"
+            android:layout_below="@id/btn6"
+            android:text="l"
+            android:layout_toRightOf="@id/btn11" />
+
+
+    </RelativeLayout>
+</LinearLayout>
