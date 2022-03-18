@@ -157,14 +157,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean fullAnswer() {
-        boolean result = true;
         for (int i = 0; i < list.get(currentPage).getAnswer().length(); i++) {
             if (answerButtons[i].getText().equals("")) {
-                result = false;
-                return result;
+                return false;
             }
         }
-        return result;
+        return true;
     }
 
     public void onClickCenter(View view) {
