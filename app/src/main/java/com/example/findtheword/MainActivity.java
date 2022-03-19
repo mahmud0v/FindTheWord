@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 nextPage();
             }
         } else if (!str.equals(list.get(currentPage).getAnswer()) && str.length() == list.get(currentPage).getAnswer().length()) {
-            Toast.makeText(this, "uncorrect", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "incorrect", Toast.LENGTH_SHORT).show();
         }
     }
 
