@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,34 +40,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void createWord() {
         int a = R.drawable.rain;
-        MakeResurce makeResurce = new MakeResurce("rain", "ertnkahpi", a);
+        MakeResurce makeResurce = new MakeResurce("rain", "ertnkahpiwyb", a);
         list.add(makeResurce);
         int s = R.drawable.tree;
         MakeResurce makeResurce5 = new MakeResurce("tree","utimewvreopb",s);
         list.add(makeResurce5);
         int b = R.drawable.sweet;
-        MakeResurce makeResurce1 = new MakeResurce("sweet", "etwkasihpqe", b);
+        MakeResurce makeResurce1 = new MakeResurce("sweet", "etwkasihpqeo", b);
         list.add(makeResurce1);
-        int c = R.drawable.ball;
-        MakeResurce makeResurce2 = new MakeResurce("ball", "hbopliawlvcx", c);
-        list.add(makeResurce2);
-        int g = R.drawable.mouse;
-        MakeResurce makeResurce3 = new MakeResurce("mouse", "opmtoiusnewz", g);
-        list.add(makeResurce3);
+
         int h = R.drawable.java;
         MakeResurce makeResurce4 = new MakeResurce("java", "ljughatveaoz", h);
         list.add(makeResurce4);
         int f = R.drawable.sky;
-        MakeResurce makeResurce6 = new MakeResurce("sky","prodimytswc",f);
+        MakeResurce makeResurce6 = new MakeResurce("sky","prodimytswck",f);
         list.add(makeResurce6);
-        int r = R.drawable.camera;
-        MakeResurce makeResurce7 = new MakeResurce("camera","ayxcoatefmorp",r);
-        int o =R.drawable.google;
-        MakeResurce makeResurce8 = new MakeResurce("google","igopneytoslg",o);
-        list.add(makeResurce8);
-        int p = R.drawable.spotify;
-        MakeResurce makeResurce9 = new MakeResurce("spotify","isokpwygtif",p);
-        list.add(makeResurce9);
+
+
     }
 
     public void nextPage() {
@@ -82,23 +73,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initImage() {
-        ImageView imageView = findViewById(R.id.image_head);
-        imageView.setImageResource(list.get(currentPage).getImage());
+            ImageView imageView = findViewById(R.id.image_head);
+            imageView.setImageResource(list.get(currentPage).getImage());
+
     }
 
     public void initAnswerButton() {
         ViewGroup viewGroup = findViewById(R.id.container1);
         answerButtons = new Button[viewGroup.getChildCount()];
-
-        for (int i = 0; i < viewGroup.getChildCount(); i++) {
-            answerButtons[i] = (Button) viewGroup.getChildAt(i);
-            answerButtons[i].setText("");
-            answerButtons[i].setVisibility(View.VISIBLE);
-            if (i >= list.get(currentPage).getAnswer().length()) {
-                answerButtons[i].setVisibility(View.GONE);
+            for (int i = 0; i < viewGroup.getChildCount(); i++) {
+                answerButtons[i] = (Button) viewGroup.getChildAt(i);
+                answerButtons[i].setText("");
+                answerButtons[i].setVisibility(View.VISIBLE);
+                if (i >= list.get(currentPage).getAnswer().length()) {
+                    answerButtons[i].setVisibility(View.GONE);
+                }
             }
-        }
-
     }
 
     public void initBottomButton() {
@@ -114,8 +104,6 @@ public class MainActivity extends AppCompatActivity {
                 bottomButton[i].setText(str);
             }
         }
-
-
     }
 
     public void clickBottom() {
@@ -134,35 +122,36 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onClickBottom(View view) {
-        if (!fullAnswer()) {
-            AppCompatButton appCompatButton = (AppCompatButton) view;
-            int num = (int) appCompatButton.getTag();
-            int index = -1;
-            for (int i = 0; i < list.get(currentPage).getAnswer().length(); i++) {
-                if (answerButtons[i].getText().equals("")) {
-                    index = i;
-                    break;
+            if (!fullAnswer()) {
+                AppCompatButton appCompatButton = (AppCompatButton) view;
+                int num = (int) appCompatButton.getTag();
+                int index = -1;
+                for (int i = 0; i < list.get(currentPage).getAnswer().length(); i++) {
+                    if (answerButtons[i].getText().equals("")) {
+                        index = i;
+                        break;
+                    }
                 }
+
+
+                if (index != -1) {
+                    answerButtons[index].setText(appCompatButton.getText());
+                    answerButtons[index].setTag(num);
+                    bottomButton[num].setText("");
+                }
+                winGame();
+
             }
-
-
-            if (index != -1) {
-                answerButtons[index].setText(appCompatButton.getText());
-                answerButtons[index].setTag(num);
-                bottomButton[num].setText("");
-            }
-            winGame();
-
         }
-    }
+
 
     public boolean fullAnswer() {
-        for (int i = 0; i < list.get(currentPage).getAnswer().length(); i++) {
-            if (answerButtons[i].getText().equals("")) {
-                return false;
+            for (int i = 0; i < list.get(currentPage).getAnswer().length(); i++) {
+                if (answerButtons[i].getText().equals("")) {
+                    return false;
+                }
             }
-        }
-        return true;
+            return true;
     }
 
     public void onClickCenter(View view) {
@@ -178,25 +167,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void winGame() {
-        String str = "";
-        for (int i = 0; i < answerButtons.length; i++) {
-            String a = (String) answerButtons[i].getText();
-            str += a;
-        }
-        if (str.equals(list.get(currentPage).getAnswer())) {
-            TextView textView = findViewById(R.id.all_question);
-            String text = (String) textView.getText();
-            text = text.substring(1);
-            int a = Integer.parseInt(text);
-            if (currentPage + 1 == a) {
-                Toast.makeText(this, "The End", Toast.LENGTH_SHORT).show();
-            } else {
-                nextPage();
+            String str = "";
+            for (int i = 0; i < answerButtons.length; i++) {
+                String a = (String) answerButtons[i].getText();
+                str += a;
             }
-        } else if (!str.equals(list.get(currentPage).getAnswer()) && str.length() == list.get(currentPage).getAnswer().length()) {
-            Toast.makeText(this, "incorrect", Toast.LENGTH_SHORT).show();
+            if (str.equals(list.get(currentPage).getAnswer())) {
+                TextView textView = findViewById(R.id.all_question);
+                String text = (String) textView.getText();
+                text = text.substring(1);
+                int a = Integer.parseInt(text);
+                if (currentPage + 1 == a) {
+                    Toast.makeText(this, "The End", Toast.LENGTH_SHORT).show();
+                } else {
+                    nextPage();
+                }
+            } else if (!str.equals(list.get(currentPage).getAnswer()) && str.length() == list.get(currentPage).getAnswer().length()) {
+                Toast.makeText(this, "incorrect", Toast.LENGTH_SHORT).show();
+            }
         }
-    }
+
+
 
     public void help(View view) {
         TextView textView = findViewById(R.id.coin);
